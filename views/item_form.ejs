@@ -1,0 +1,35 @@
+<%- include('index') %>
+<main>
+    <div>
+        <form method="POST" action=' '>
+            <label for="name ">Name:</label>
+            <input type="text" id="name" name="name"  value="<%= typeof itemname == 'undefined' ? '' : itemname %>" /><br/>
+            <label for="description">Description:</label>
+            <input type="text" id="description" name="description" value="<%= typeof itemdescription == 'undefined' ? '' : itemdescription %>" /><br/>
+            <label for="img_url">Movie Image Url:</label>
+            <input type="url" id="img_url" name="img_url" value="<%= typeof itemurl == 'undefined' ? '' : itemurl %>" /><br/>
+            <label for='imdb'>Imdb</label>
+            <input type="number" max="10" min="0" id='imdb' name='imdb' value="<%= typeof itemimdb == 'undefined' ? '' : itemimdb %>" required /><br/></br>
+            <label>GENRE</label><br/>
+            <div>
+            <% for(let i=0;i < category.length;i++){ %>
+                <label for="<%=category[i]._id %>"><%=category[i].name %></label>
+                <input type='checkbox' name='category' id='<%=category[i]._id %>' value='<%=category[i]._id %>' <%= category[i].checked == 'true' ? 'checked':'' %> /></br>
+                <% } %>
+            </div>
+
+            <button type="submit">Submit</button>
+
+
+        </form>
+    </div>
+    <div>
+      <% if(typeof errors != 'undefined'){ %>
+            <ul>
+           <%   for(let i=0 ; i < errors.length ;i++){ %>
+                    <li><%=errors[i].msg %></li>
+           <%     } %>
+            </ul>
+      <%  } %>
+    </div>
+</main>

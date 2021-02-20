@@ -1,0 +1,23 @@
+<%- include('index') %>
+<main>
+    <a href='/catalog/item/create'><button>Add movies</button></a>
+    <h1> All Movies</h1>
+    <div>
+        <% for(let i=0; i < item_list.length;i++){ %>
+            <div>
+                
+                <h2><a href='<%=item_list[i].url %>'><%=item_list[i].name %></a></h2> 
+                <p>description: <%=item_list[i].description %></p> 
+                <p>Imdb: <%=item_list[i].imdb %></p> 
+                <p> Genre: <% for(let j=0;j < item_list[i].category.length;j++){ %><span
+                    ><a href="<%=item_list[i].category[j].url %>">
+                      <%=item_list[i].category[j].name %></a
+                    ></span
+                  ><% } %></p>
+                <hr/>
+                
+                
+            </div>
+            <% } %>
+    </div>
+</main>

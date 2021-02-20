@@ -1,0 +1,23 @@
+<%- include('index') %>
+<main>
+  <div class='deletegenre'>
+  <h1> <%=category_detail.name %> ___(<%=item_detail.length %>) </h1>
+  <a href="/catalog/category/delete/<%=category_detail._id %>"><h3>Delete Genre</h3></a></div>
+  <hr/> 
+  <div>
+    <%  if(item_detail.length==0){ %>
+        <h2>No Movies In This Genre</h2>
+     <% }else{ %>
+    
+    
+      <% for(let i=0;i < item_detail.length;i++ ){ %>
+      <img class="img-genre" src="<%=item_detail[i].img_url %>" alt='' /><br/>
+      <a href="<%=item_detail[i].url %>"><h2><%=item_detail[i].name %></h2> </a><hr/>
+      <% } %>
+    <%  } %>
+    
+  </br>
+  
+  </div>
+  
+</main>

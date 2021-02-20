@@ -1,0 +1,36 @@
+body {
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color:aliceblue
+}
+nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  
+  background-color: black;
+  color: white;
+}
+.nav-h1 {
+  font-size: 25px;
+}
+.add-btn {
+  width: 100px;
+}
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+img{
+  height: 300px;
+}
+.deletegenre{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  grid-gap: 800px;
+}
+
+button{
+  background-color: lightgreen;
+}

@@ -1,0 +1,17 @@
+<%- include('index') %>
+<main>
+  <div>
+    <a href="/catalog/category/create"><h2>ADD GENRE</h2></a>
+    <h1>List of all Genre in our server</h1>
+    <ul>
+      <% for(let i=0;i < category_list.length;i++){ %>
+      <li>
+        <div><a href="<%= category_list[i].url %>"><h2> <%=category_list[i].name %> </h2></a></div>
+        <div> <%=category_list[i].description %></div>
+      </li>
+      <br/>
+      <hr/>
+      <% } %>
+    </ul>
+  </div>
+</main>

@@ -1,0 +1,27 @@
+<%- include('index') %>
+<main>
+    
+
+   <% if(items.length>0){ %>
+        <h1>Delete these Movies First </h1>
+        <hr/>
+        
+        
+        <ul>
+         <%   for(let i=0;i < items.length ;i++){ %>
+            <a href="<%=items[i].url %>"><h1><%=items[i].name %></h1></a><br/>
+         <%   } %>
+        </ul>
+  <%  }
+  else{ %>
+        <h2>Delete Genre : <%=category.name %></h2>
+        <p>Do you really want to delete this Genre?</p>
+        <br/>
+        <form method="POST" action=" ">
+            <input type="hidden" >
+            <button type="submit">Delete</button>
+        </form>
+   <% } %>
+    
+    
+</main>

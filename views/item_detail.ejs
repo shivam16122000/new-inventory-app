@@ -1,0 +1,24 @@
+<%- include('index') %>
+<main>
+  <img src=<%=item_detail.img_url %> alt="movie img" />
+  
+  <h1><%=item_detail.name %></h1>
+  <p>description: <%=item_detail.description %></p>
+  <% if( item_detail.category.length==0){ %>
+    <p>category: Not defined</p>
+    <% }else{ %>
+      <p>
+        category: <% for(let i=0;i < item_detail.category.length;i++){ %><span
+          ><a href="<%=item_detail.category[i].url %>">
+            <%=item_detail.category[i].name %></a
+          ></span
+        ><% } %>
+      </p>
+    <% } %>
+  <p>Imdb: <%=item_detail.imdb %></p>
+  <div>
+    <a href="/catalog/item/update/<%=item_detail._id %>"><button>Update</button></a>
+    <a href="/catalog/item/delete/<%=item_detail._id %>"><button>Delete</button></a>
+  </div>
+</main>
+
