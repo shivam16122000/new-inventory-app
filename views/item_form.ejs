@@ -9,7 +9,7 @@
             <label for="img_url">Movie Image Url:</label>
             <input type="url" id="img_url" name="img_url" value="<%= typeof itemurl == 'undefined' ? '' : itemurl %>" /><br/>
             <label for='imdb'>Imdb</label>
-            <input type="number" max="10" min="0" id='imdb' name='imdb' value="<%= typeof itemimdb == 'undefined' ? '' : itemimdb %>" required /><br/></br>
+            <input type="number" max="10.0" min="0.1" id='imdb' name='imdb' value="<%= typeof itemimdb == 'undefined' ? '' : itemimdb %>" required /><br/></br>
             <label>GENRE</label><br/>
             <div>
             <% for(let i=0;i < category.length;i++){ %>
